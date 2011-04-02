@@ -1,0 +1,73 @@
+REgiGV -- Reverse Engineered GigE Vision
+
+In my diploma thesis I got confronted with a number of
+image aquisition devices using a GigE Vision interface.
+Although this standard is claimed being "open" it is
+quite the contrary. To get access to it you have to:
+
+- pay a fee
+- sign a NDA
+- must not publish any source code implementing GigE
+
+Whenever my diploma schedule allows I'll try to reverse
+as much of GigE as I can.
+
+REgiG aims at providing the following parts, however
+what, when and even if they'll be done is neither
+planned not forseeable.
+
+High priority:
+
+libregigv
+- Implement GigE Vision Control Protocol (GVCP)
+  There's a Wireshark protocol plugin for this, so
+  someone already (partially?) covered this.
+
+- Implement GigE Vision Stream Protocol (GVSP)
+  
+- Implement GigE Device Discovery
+  No details known so far, looks like some MAC layer
+  magic. Probably involves some in-situ DHCP or similar
+
+Additionally to this GigE Vision uses "GenICam" for
+machine readable device description. Unline GigE itself
+GenICam is a truly open standard, the reference
+implementation is available as open source under a BSD-
+like license:
+http://www.emva.org/cms/index.php?idcat=27
+
+Middle Priority:
+- some nice graphical frontends for libregigv
+
+Low Priority:
+- Linux kernel iptables GigE classifiers
+
+= Some information on GigE own IP stacks =
+Most commercial GigE Vision implementations come with
+custom NIC drivers, also implementing their very own
+IP stack. The reason for this is, that, according to
+the vendors, the Windows built in drivers and IP stack
+cause (to high) CPU loads.
+
+Given the already high performance of Linux' networking
+system this should not be neccesary for this OS.
+
+Furthermore I highly doubt the quality of those special
+drivers/IP stacks from a security point of view. Maybe
+I'll do some security testing on those as well, but this
+is absolute low priority. But whoever reads this and
+wants to have some fun, go ahead, I sense a lot of p0wn
+there.
+
+---------------------------------------------------------
+IMPORTANT LEGAL INFORMATION:
+I'm nt going to get access to the official standard and
+its documentation. This work is the result of pure
+reverse engineering work. Since I work and live in the EU
+I'm not only not just infringing any rights, I am in fact
+protected by EU law that explicitly permits reverse
+engineering for gaining interoperability with products
+of own creation (also commercially). I case someone
+feels like sending me a "cease and desists": This didn't
+very well for those who tried.
+
