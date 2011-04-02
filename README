@@ -12,6 +12,12 @@ quite the contrary. To get access to it you have to:
 Whenever my diploma schedule allows I'll try to reverse
 as much of GigE as I can.
 
+!!! I just found out about opengigevision:
+https://gitorious.org/opengigevision
+Nevertheless I'll do my own implementation -- having
+multiple independent implementations of a protocol
+is always a good idea!
+
 REgiG aims at providing the following parts, however
 what, when and even if they'll be done is neither
 planned not forseeable.
